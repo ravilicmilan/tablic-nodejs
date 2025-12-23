@@ -1,0 +1,38 @@
+<%- include('_header') %>
+
+<div class="row">
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-content">
+        <h5>Online Users</h5>
+        <ul id="online-users"></ul>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <div id="pending-invitations">
+      <div class="card yellow lighten-5">
+        <div class="card-content">
+          <h5>Pending Game Invitations</h5>
+          <ul id="pending-invitations-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <div id="accepted-invitations">
+      <div class="card teal lighten-5">
+        <div class="card-content">
+          <h5>Accepted Invitations</h5>
+          <ul id="accepted-invitations-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const CURRENT_USER = JSON.parse(`<%- JSON.stringify(currentUser) %>`);
+</script>
+
+<script src="/js/ws-client.js"></script>
+<%- include('_footer') %>

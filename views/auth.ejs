@@ -1,0 +1,63 @@
+<%- include('_header') %>
+
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div id="auth-message" class="green-text"></div>
+
+    <div class="card">
+      <div class="card-content">
+        <form id="signup-form" style="display: none">
+          <h5>Sign up</h5>
+          <div class="input-field">
+            <input
+              id="su-username"
+              name="username"
+              type="text"
+              required
+              autocomplete="off"
+            />
+            <label for="su-username">Username</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="su-password"
+              name="password"
+              type="password"
+              required
+              autocomplete="off"
+            />
+            <label for="su-password">Password</label>
+          </div>
+          <button class="btn" type="submit">Sign up</button>
+        </form>
+
+        <form id="login-form">
+          <h5>Login</h5>
+          <div class="input-field">
+            <input
+              id="li-username"
+              name="username"
+              type="text"
+              required
+              autocomplete="off"
+            />
+            <label for="li-username">Username</label>
+          </div>
+          <div class="input-field">
+            <input
+              id="li-password"
+              name="password"
+              type="password"
+              required
+              autocomplete="off"
+            />
+            <label for="li-password">Password</label>
+          </div>
+          <button class="btn green" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/auth-client.js"></script>
+<%- include('_footer') %>

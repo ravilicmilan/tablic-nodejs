@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tablic</title>
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link rel="stylesheet" href="/css/app.css" />
+  <style>
+    body {
+      padding: 24px;
+    }
+    </style>
+    <style>
+      /* navbar active button */
+      .nav-active {
+        background: rgba(255,255,255,0.12) !important;
+        border-radius: 4px;
+        padding: 0 8px;
+        color: #fff !important;
+      }
+    </style>
+    <script src="/js/dom_utils.js"></script>
+    <script src="/js/header.js"></script>
+</head>
+<body>
+  <nav style="background:#607d8b">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo" style="margin-left:12px;color:#fff">Home</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if (!currentUser) { %>
+          <li><a id="nav-login" href="#" style="color:#fff">Login</a></li>
+          <li><a id="nav-signup" href="#" style="color:#fff">Sign up</a></li>
+        <% } else { %>
+          <li style="padding:0 12px; display:flex;align-items:center;color:#fff">Hello, 
+            <strong style="margin-left:8px;color:#fff"><%= currentUser %></strong>
+          </li>
+          <li><a id="nav-logout" href="#" style="color:#fff">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">

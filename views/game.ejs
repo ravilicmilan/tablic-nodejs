@@ -1,0 +1,87 @@
+<%- include('_header') %>
+<script>
+  const CURRENT_USER = `<%- currentUser %>`;
+  const GAME_ID = `<%- gameId %>`;
+  const GAME_DATA = <%- JSON.stringify(gameData) %>;
+</script>
+<script src="/js/game.js"></script>
+
+<div id="header-wrapper">
+  <h5 id="player-turn"></h5>
+  <button id="start-game-btn" class="btn blue accent-2">Start Game</button>
+</div>
+
+<div id="game-table-wrapper" class="row">
+  <h6>Game Table</h6>
+  <div id="game-table"></div>
+</div>
+<div id="player-hand-wrapper" class="row">
+  <h6>Your Hand</h6>
+  <div id="player-hand"></div>
+</div>
+<div id="score-wrapper" class="row">
+  <h6>Score:</h6>
+  <div id="player-names-wrapper">
+    <div id="player1-name"></div>
+    <div id="player2-name"></div>
+  </div>
+
+  <div id="player-score-wrapper">
+    <div id="player1-score">
+      <div class="score-heading">
+        <span>Points:</span>
+        <span>Recke:</span>
+      </div>
+      <div id="player1-score-list">
+        <div id="player1-score-items"></div>
+        <div id="player1-score-recke"></div>
+      </div>
+      <div id="player1-total-score"></div>
+    </div>
+    <div id="player2-score">
+      <div class="score-heading">
+        <span>Points:</span>
+        <span>Recke:</span>
+      </div>
+      <div id="player2-score-list">
+        <div id="player2-score-items"></div>
+        <div id="player2-score-recke"></div>
+      </div>
+      <div id="player2-total-score"></div>
+    </div>
+  </div>
+</div>
+
+<button data-target="modal1" class="btn modal-trigger waves-effect waves-green">
+  Show cards in hand
+</button>
+
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h4>Cards in hand</h4>
+    <div id="modals-content" class="col s12"></div>
+  </div>
+  <div class="modal-footer">
+    <button class="modal-close waves-effect waves-red red btn">Close</button>
+  </div>
+</div>
+
+<div id="chat-container" class="card">
+  <div id="chat-header">
+    <div
+      id="chat-header-btn"
+      class="btn indigo darken-4 white-text waves-effect waves-light"
+    >
+      Hide Chat
+    </div>
+  </div>
+  <div id="chat-messages-wrapper"></div>
+  <div id="chat-input-wrapper">
+    <input id="chat-input-text" placeholder="say something..." />
+    <button id="chat-button" class="btn">
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+</div>
+
+<%- include('_footer') %>
